@@ -13,15 +13,12 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto space-y-8 animate-fade-in-up">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            Videos that <span className="text-gradient">Convert</span>
-            <br />
-            Every Launch, Ad & Event
+            One video <span className="text-gradient">subscription</span> for all your B2B marketing needs
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Unlimited video production for software companies and ecommerce brands. 
-            Professional quality videos, delivered fast.
+            Get every video your team needs including launch, ads, social and event content in one subscription
           </p>
 
           {/* CTA Buttons */}
