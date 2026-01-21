@@ -15,8 +15,8 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Turn conversations into dealflow and brand equity.
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Clipsi builds and runs end to end podcasts that help venture firms and tech companies attract founders, customers, partnerships, and inbound opportunities while compounding long term brand authority.
           </p>
 
           {/* CTA Button */}
