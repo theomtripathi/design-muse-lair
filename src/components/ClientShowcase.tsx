@@ -1,78 +1,36 @@
-import { Building2, Mic } from "lucide-react";
-
 const clients = [
-  {
-    name: "Dyversify Capital",
-    podcast: "Winning Podcast",
-    type: "VC Firm",
-  },
-  {
-    name: "Evergreen",
-    podcast: "Transformation",
-    type: "Tech Company",
-  },
-  {
-    name: "Millionaire Mentor",
-    podcast: "Podcast",
-    type: "Media Brand",
-  },
-  {
-    name: "Dyversify Capital",
-    podcast: "Winning Podcast",
-    type: "VC Firm",
-  },
-  {
-    name: "Evergreen",
-    podcast: "Transformation",
-    type: "Tech Company",
-  },
-  {
-    name: "Millionaire Mentor",
-    podcast: "Podcast",
-    type: "Media Brand",
-  },
+  "Dyversify Capital",
+  "Winning Podcast",
+  "Evergreen",
+  "Transformation",
+  "Millionaire Mentor Podcast",
+  "Dyversify Capital",
+  "Winning Podcast",
+  "Evergreen",
+  "Transformation",
+  "Millionaire Mentor Podcast",
 ];
 
 const ClientShowcase = () => {
   return (
-    <div className="w-full overflow-hidden py-8">
-      <div className="flex animate-scroll gap-6" style={{ width: "max-content" }}>
+    <div className="w-full overflow-hidden py-4">
+      <div className="flex animate-scroll gap-12" style={{ width: "max-content" }}>
         {clients.map((client, index) => (
-          <div
+          <span
             key={index}
-            className="glass-card px-6 py-4 rounded-xl flex items-center gap-4 min-w-[280px] hover:scale-105 transition-transform duration-300"
+            className="text-lg md:text-xl font-medium text-foreground/70 whitespace-nowrap"
           >
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              {client.type === "VC Firm" ? (
-                <Building2 className="h-6 w-6 text-primary" />
-              ) : (
-                <Mic className="h-6 w-6 text-primary" />
-              )}
-            </div>
-            <div>
-              <h4 className="font-semibold text-foreground">{client.name}</h4>
-              <p className="text-sm text-muted-foreground">{client.podcast}</p>
-            </div>
-          </div>
+            {client}
+          </span>
         ))}
         {/* Duplicate for seamless loop */}
         {clients.map((client, index) => (
-          <div
+          <span
             key={`dup-${index}`}
-            className="glass-card px-6 py-4 rounded-xl flex items-center gap-4 min-w-[280px] hover:scale-105 transition-transform duration-300"
+            className="text-lg md:text-xl font-medium text-foreground/70 whitespace-nowrap"
           >
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-              {client.type === "VC Firm" ? (
-                <Building2 className="h-6 w-6 text-primary" />
-              ) : (
-                <Mic className="h-6 w-6 text-primary" />
-              )}
-            </div>
-            <div>
-              <h4 className="font-semibold text-foreground">{client.name}</h4>
-              <p className="text-sm text-muted-foreground">{client.podcast}</p>
-            </div>
-          </div>
+            {client}
+          </span>
         ))}
       </div>
     </div>
