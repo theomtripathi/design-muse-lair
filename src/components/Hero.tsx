@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ClientShowcase from "./ClientShowcase";
 
 const Hero = () => {
   return (
@@ -33,8 +34,11 @@ const Hero = () => {
 
           {/* Trust Line */}
           <p className="text-sm md:text-base text-muted-foreground/70 pt-8">
-            Trusted by venture teams building long term mindshare with founders.
+            Trusted by top VC firms and tech companies
           </p>
+
+          {/* Client Showcase */}
+          <ClientShowcase />
         </div>
       </div>
     </section>
