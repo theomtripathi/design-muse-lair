@@ -17,14 +17,13 @@ const Footer = () => {
                 <span className="text-xl font-bold">Clipsi</span>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                Venture grade podcast infrastructure. 
-                Turn conversations into dealflow and brand equity.
+                End to End podcast production. Turn conversations into dealflow and brand equity.
               </p>
               <a 
-                href="mailto:hello@clipsi.co" 
+                href="mailto:om@clipsi.co" 
                 className="text-primary hover:underline"
               >
-                hello@clipsi.co
+                om@clipsi.co
               </a>
             </div>
 
@@ -56,11 +55,6 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               © {currentYear} Clipsi. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-            </div>
           </div>
         </div>
       </div>

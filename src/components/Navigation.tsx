@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import clipsiLogo from "@/assets/clipsi-logo.png";
 
+const CAL_LINK = "https://cal.com/clipsi/30min";
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -49,7 +51,7 @@ const Navigation = () => {
             <Button
               variant="default"
               className="bg-primary text-foreground hover:bg-primary/90 glow-hover font-semibold px-6"
-              onClick={() => scrollToSection("book-a-call")}
+              onClick={() => window.open(CAL_LINK, "_blank")}
             >
               Book a Call
             </Button>
@@ -79,7 +81,7 @@ const Navigation = () => {
             <Button
               variant="default"
               className="w-full bg-primary text-foreground hover:bg-primary/90 font-semibold"
-              onClick={() => scrollToSection("book-a-call")}
+              onClick={() => window.open(CAL_LINK, "_blank")}
             >
               Book a Call
             </Button>
