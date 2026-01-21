@@ -29,12 +29,11 @@ const BookACall = () => {
       setTimeout(() => {
         Cal.ns["30min"]("inline", {
           elementOrSelector: "#my-cal-inline-30min",
-          config: { layout: "month_view", theme: "light" },
-          calLink: "om-tripathi-rpdnjo/30min",
+          config: { layout: "month_view" },
+          calLink: "clipsi/30min",
         });
 
         Cal.ns["30min"]("ui", {
-          theme: "light",
           hideEventTypeDetails: false,
           layout: "month_view",
         });
