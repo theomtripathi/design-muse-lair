@@ -1,53 +1,51 @@
-import { Play } from "lucide-react";
-import { useState } from "react";
+import { Play, Podcast } from "lucide-react";
 
 const projects = [
   {
-    title: "Product/Feature Launch",
-    category: "Product Video",
+    title: "Venture Insights Podcast",
+    category: "VC Firm",
+    description: "A leading venture capital firm building founder relationships through weekly conversations with operators.",
+    outcome: "200+ founder inbound conversations in 6 months",
     color: "from-blue-500/20 to-purple-500/20",
-    videoId: "69VKylyArPY",
   },
   {
-    title: "AI Ecommerce Videos",
-    category: "Ad Creative",
+    title: "Tech Leaders Unplugged",
+    category: "Tech Company",
+    description: "A growth-stage startup positioning their CEO as a category voice in enterprise software.",
+    outcome: "Featured in TechCrunch, 15 partnership leads",
     color: "from-orange-500/20 to-red-500/20",
-    videoId: "Jg5fUoPU6EM",
   },
   {
-    title: "AI App Marketing Videos",
-    category: "Product Demo",
+    title: "The Founder Files",
+    category: "VC Firm",
+    description: "An emerging fund building thesis visibility with early-stage founders across fintech.",
+    outcome: "3 portfolio deals attributed to podcast relationships",
     color: "from-green-500/20 to-teal-500/20",
-    videoId: "ZUt7oDn8TAk",
   },
   {
-    title: "Pixar Style Video",
-    category: "Animation",
+    title: "Growth Engine Weekly",
+    category: "Tech Company",
+    description: "A B2B SaaS company creating demand through conversations with industry practitioners.",
+    outcome: "40% increase in inbound demo requests",
     color: "from-indigo-500/20 to-blue-500/20",
-    videoId: "Bm-ySayevtk",
   },
 ];
 
 const Portfolio = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-
   return (
     <section id="portfolio" className="py-20 lg:py-32 relative">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-muted-foreground mb-6">
-            <Play className="h-4 w-4 text-primary" />
+            <Podcast className="h-4 w-4 text-primary" />
             Our Work
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Portfolio
-            <br />
-            <span className="text-gradient">That Speaks Volumes</span>
+            Work We Have <span className="text-gradient">Done</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From startups to enterprises, we've helped hundreds of brands tell their stories.
+            A snapshot of podcasts we have built and scaled.
           </p>
         </div>
 
@@ -56,52 +54,31 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer animate-fade-in"
+              className="glass-card rounded-2xl overflow-hidden animate-fade-in group hover:scale-[1.02] transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onClick={() => {
-                if (project.videoId) {
-                  setPlayingIndex(index);
-                }
-              }}
             >
-              {playingIndex === index && project.videoId ? (
-                /* YouTube Player */
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${project.videoId}?autoplay=1&si=b3Q3dmzwHKzMM8-m`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              ) : (
-                <>
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} transition-all duration-500 ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`} />
-
-                  {/* Glass Overlay */}
-                  <div className="absolute inset-0 glass-card" />
-
-                  {/* Play Button - Always visible for videos */}
-                  <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${hoveredIndex === index ? 'scale-110 opacity-100' : 'scale-100 opacity-100'}`}>
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center glow-hover">
-                      <Play className="h-8 w-8 text-foreground fill-foreground" />
-                    </div>
+              {/* Background Gradient */}
+              <div className={`h-32 bg-gradient-to-br ${project.color} relative`}>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Play className="h-8 w-8 text-foreground" />
                   </div>
+                </div>
+              </div>
 
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
-                    <div className="text-sm text-primary mb-1">{project.category}</div>
-                    <h3 className="text-xl font-bold">{project.title}</h3>
-                  </div>
-
-                  {/* Hover Border Glow */}
-                  <div className={`absolute inset-0 border-2 border-primary rounded-2xl transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`} style={{ boxShadow: 'var(--shadow-glow)' }} />
-                </>
-              )}
+              {/* Content */}
+              <div className="p-6">
+                <div className="text-sm text-primary mb-2">{project.category}</div>
+                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                
+                <div className="border-t border-primary/10 pt-4">
+                  <p className="text-sm">
+                    <span className="text-primary font-medium">Outcome: </span>
+                    <span className="text-muted-foreground">{project.outcome}</span>
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

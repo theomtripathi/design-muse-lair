@@ -37,17 +37,14 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection("how-it-works")} className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors">
-              How It Works
-            </button>
             <button onClick={() => scrollToSection("services")} className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors">
               Services
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors">
-              Pricing
-            </button>
             <button onClick={() => scrollToSection("portfolio")} className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors">
-              Portfolio
+              Works
+            </button>
+            <button onClick={() => scrollToSection("audiences")} className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors">
+              About
             </button>
             <Button
               variant="default"
@@ -70,17 +67,14 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 space-y-4 border-t border-primary/20 animate-fade-in">
-            <button onClick={() => scrollToSection("how-it-works")} className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2">
-              How It Works
-            </button>
             <button onClick={() => scrollToSection("services")} className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2">
               Services
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2">
-              Pricing
-            </button>
             <button onClick={() => scrollToSection("portfolio")} className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2">
-              Portfolio
+              Works
+            </button>
+            <button onClick={() => scrollToSection("audiences")} className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2">
+              About
             </button>
             <Button
               variant="default"

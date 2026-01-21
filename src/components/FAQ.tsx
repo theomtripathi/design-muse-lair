@@ -8,28 +8,24 @@ import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "How does the unlimited model work?",
-    answer: "Once subscribed, you can submit unlimited video requests. We'll work on them one at a time (or two for Pro plan) until you're 100% satisfied. No limits on revisions or total videos per month.",
+    question: "How does pricing work?",
+    answer: "We operate on a monthly retainer model. Pricing depends on which parts of the podcast lifecycle we manage for you.",
   },
   {
-    question: "What's the average turnaround time?",
-    answer: "Most videos are delivered within 48 hours of the initial brief. Complex projects may take 3-5 days. Enterprise clients get priority 24-hour turnaround on most requests.",
+    question: "Do I need all four stages?",
+    answer: "No. Some teams start with pre production and production. Others plug us in only for post production and distribution.",
   },
   {
-    question: "Can I pause my subscription?",
-    answer: "Absolutely! Billing cycles are based on a 31-day period. You can pause whenever you need and resume anytime. Unused days roll over when you return.",
+    question: "Is this only for venture capital firms?",
+    answer: "No. We work with venture firms and technology companies that want to build authority and attract the right relationships.",
   },
   {
-    question: "What types of videos do you create?",
-    answer: "We specialize in product launches, ad creatives, demos, social content, event coverage, testimonials, and more. If it's a video, we can create it.",
+    question: "How long does it take to launch?",
+    answer: "Most podcasts go live within 30 days of kickoff.",
   },
   {
-    question: "Do you provide revisions?",
-    answer: "Yes, unlimited revisions! We'll iterate until you're completely happy with the final video. Your satisfaction is our priority.",
-  },
-  {
-    question: "What if I need something custom?",
-    answer: "Our Enterprise plan is fully customizable. We can tailor workflows, delivery times, and team structure to match your exact needs. Book a call to discuss.",
+    question: "Do you help with guests?",
+    answer: "Yes. Guest strategy and management is a core part of our pre production offering.",
   },
 ];
 
