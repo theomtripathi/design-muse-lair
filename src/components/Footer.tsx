@@ -17,14 +17,20 @@ const Footer = () => {
                 <span className="text-xl font-bold">Clipsi</span>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                Your creative video partner for every launch, ad, and event. 
-                Unlimited video production, delivered fast.
+                Venture grade podcast infrastructure. 
+                Turn conversations into dealflow and brand equity.
               </p>
+              <a 
+                href="mailto:hello@clipsi.co" 
+                className="text-primary hover:underline"
+              >
+                hello@clipsi.co
+              </a>
             </div>
 
             {/* Links */}
             <div>
-              <h3 className="font-semibold mb-4">Product</h3>
+              <h3 className="font-semibold mb-4">Navigation</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <button onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors">
@@ -32,13 +38,13 @@ const Footer = () => {
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors">
-                    Pricing
+                  <button onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors">
+                    Works
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors">
-                    Portfolio
+                  <button onClick={() => document.getElementById("audiences")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors">
+                    About
                   </button>
                 </li>
               </ul>
@@ -53,9 +59,6 @@ const Footer = () => {
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Terms of Service
               </a>
             </div>
           </div>
