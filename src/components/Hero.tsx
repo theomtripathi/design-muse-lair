@@ -11,12 +11,12 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto space-y-8 animate-fade-in-up">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            Turn conversations into <span className="text-gradient">dealflow</span> and brand equity.
+            End to End Podcasting for <span className="text-gradient">VC and Tech</span> firms
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            End to End Podcasting for VC and Tech firms
+            Turn conversations into dealflow and brand equity.
           </p>
 
           {/* CTA Button */}
