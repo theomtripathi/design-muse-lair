@@ -1,35 +1,79 @@
-import { Play, Podcast } from "lucide-react";
+import { Podcast } from "lucide-react";
+import { useState } from "react";
 
-const projects = [
+const clips = [
   {
-    title: "Venture Insights Podcast",
-    category: "VC Firm",
-    description: "A leading venture capital firm building founder relationships through weekly conversations with operators.",
-    outcome: "200+ founder inbound conversations in 6 months",
-    color: "from-blue-500/20 to-purple-500/20",
+    title: "Podcast Clip",
+    videoId: "eWbnOCRQaQA",
+    type: "clip",
   },
   {
-    title: "Tech Leaders Unplugged",
-    category: "Tech Company",
-    description: "A growth-stage startup positioning their CEO as a category voice in enterprise software.",
-    outcome: "Featured in TechCrunch, 15 partnership leads",
-    color: "from-orange-500/20 to-red-500/20",
+    title: "Full Episode Editing",
+    videoId: "ZmMQmJf4E0c",
+    type: "episode",
   },
   {
-    title: "The Founder Files",
-    category: "VC Firm",
-    description: "An emerging fund building thesis visibility with early-stage founders across fintech.",
-    outcome: "3 portfolio deals attributed to podcast relationships",
-    color: "from-green-500/20 to-teal-500/20",
-  },
-  {
-    title: "Growth Engine Weekly",
-    category: "Tech Company",
-    description: "A B2B SaaS company creating demand through conversations with industry practitioners.",
-    outcome: "40% increase in inbound demo requests",
-    color: "from-indigo-500/20 to-blue-500/20",
+    title: "Podcast Clip",
+    videoId: "3WYcWhOvsck",
+    type: "clip",
   },
 ];
+
+const shorts = [
+  {
+    title: "Short Clip",
+    videoId: "mkTExR7-vdo",
+  },
+  {
+    title: "Short Clip",
+    videoId: "Vfw_sTR4a5A",
+  },
+];
+
+const VideoCard = ({ videoId, title, isShort = false }: { videoId: string; title: string; isShort?: boolean }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const thumbnailUrl = isShort 
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  
+  const embedUrl = isShort 
+    ? `https://www.youtube.com/embed/${videoId}?autoplay=1`
+    : `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+  return (
+    <div 
+      className={`glass-card rounded-2xl overflow-hidden animate-fade-in group hover:scale-[1.02] transition-all duration-300 ${isShort ? 'aspect-[9/16]' : 'aspect-video'}`}
+    >
+      {isPlaying ? (
+        <iframe
+          src={embedUrl}
+          title={title}
+          className="w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      ) : (
+        <div 
+          className="relative w-full h-full cursor-pointer"
+          onClick={() => setIsPlaying(true)}
+        >
+          <img 
+            src={thumbnailUrl}
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+            <div className="w-16 h-16 bg-primary/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg className="h-8 w-8 text-primary-foreground ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Portfolio = () => {
   return (
@@ -49,36 +93,26 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((project, index) => (
-            <div
+        {/* Clips Grid - 3 horizontal videos */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
+          {clips.map((clip, index) => (
+            <VideoCard 
               key={index}
-              className="glass-card rounded-2xl overflow-hidden animate-fade-in group hover:scale-[1.02] transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Background Gradient */}
-              <div className={`h-32 bg-gradient-to-br ${project.color} relative`}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Play className="h-8 w-8 text-foreground" />
-                  </div>
-                </div>
-              </div>
+              videoId={clip.videoId}
+              title={clip.title}
+            />
+          ))}
+        </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="text-sm text-primary mb-2">{project.category}</div>
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                
-                <div className="border-t border-primary/10 pt-4">
-                  <p className="text-sm">
-                    <span className="text-primary font-medium">Outcome: </span>
-                    <span className="text-muted-foreground">{project.outcome}</span>
-                  </p>
-                </div>
-              </div>
+        {/* Shorts Row - 2 vertical videos */}
+        <div className="flex justify-center gap-6 lg:gap-8">
+          {shorts.map((short, index) => (
+            <div key={index} className="w-[200px] md:w-[240px]">
+              <VideoCard 
+                videoId={short.videoId}
+                title={short.title}
+                isShort={true}
+              />
             </div>
           ))}
         </div>
