@@ -1,13 +1,11 @@
 const clients = [
   "Dyversify Capital",
   "Winning Podcast",
-  "Evergreen",
-  "Transformation",
+  "Evergreen Transformation",
   "Millionaire Mentor Podcast",
   "Dyversify Capital",
   "Winning Podcast",
-  "Evergreen",
-  "Transformation",
+  "Evergreen Transformation",
   "Millionaire Mentor Podcast",
 ];
 

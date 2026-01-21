@@ -1,29 +1,21 @@
-import { TrendingUp, Rocket, Target, Award, Crown } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 
 const milestones = [
   {
     timeframe: "Month 1",
     description: "Clear positioning, first episodes live, distribution engine running",
-    icon: Rocket,
-    color: "from-blue-500 to-cyan-500",
   },
   {
     timeframe: "Quarter 1",
     description: "Consistent founder conversations and inbound interest",
-    icon: Target,
-    color: "from-purple-500 to-pink-500",
   },
   {
     timeframe: "6 Months",
     description: "Recognizable brand inside your category",
-    icon: Award,
-    color: "from-orange-500 to-yellow-500",
   },
   {
     timeframe: "Long Term",
     description: "A durable media asset compounding beyond any single deal",
-    icon: Crown,
-    color: "from-primary to-emerald-500",
   },
 ];
 
@@ -62,28 +54,20 @@ const Transformation = () => {
               >
                 {/* Connector Line (hidden on mobile and last item) */}
                 {index < milestones.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-[calc(50%+2rem)] w-[calc(100%-1rem)] h-px bg-gradient-to-r from-primary/50 to-primary/10" />
+                  <div className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-1rem)] h-px bg-gradient-to-r from-primary/50 to-primary/10" />
                 )}
 
                 <div className="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-all duration-300 glow-hover relative overflow-hidden">
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${milestone.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                  
                   {/* Step Number */}
-                  <div className="absolute top-4 right-4 text-6xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+                  <div className="text-5xl font-bold text-primary mb-4">
                     {index + 1}
                   </div>
 
-                  {/* Icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${milestone.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                    <milestone.icon className="h-8 w-8 text-white" />
-                  </div>
-
                   {/* Content */}
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                     {milestone.timeframe}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {milestone.description}
                   </p>
                 </div>
