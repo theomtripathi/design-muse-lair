@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ClientShowcase from "./ClientShowcase";
 
+const CAL_LINK = "https://cal.com/clipsi/30min";
+
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-24">
@@ -25,7 +27,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="bg-primary text-foreground hover:bg-primary/90 glow-hover font-semibold px-8 py-6 text-lg group"
-              onClick={() => document.getElementById("book-a-call")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => window.open(CAL_LINK, "_blank")}
             >
               Book a Call
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

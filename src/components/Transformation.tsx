@@ -1,5 +1,7 @@
 import { TrendingUp } from "lucide-react";
 
+const CAL_LINK = "https://cal.com/clipsi/30min";
+
 const milestones = [
   {
     timeframe: "Month 1",
@@ -80,12 +82,14 @@ const Transformation = () => {
         <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "600ms" }}>
           <p className="text-lg text-muted-foreground">
             Ready to start your transformation?{" "}
-            <button 
-              onClick={() => document.getElementById("book-a-call")?.scrollIntoView({ behavior: "smooth" })}
+            <a 
+              href={CAL_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary hover:underline font-semibold"
             >
               Let's talk →
-            </button>
+            </a>
           </p>
         </div>
       </div>
